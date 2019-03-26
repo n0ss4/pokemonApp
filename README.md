@@ -4,6 +4,6 @@
 
 Este proyecto ha sido creado con [Angular CLI](https://github.com/angular/angular-cli) versión 7.0.4. y [Bootstrap](https://getbootstrap.com/) versión 4.3
 
-*Creada por ***David Ayachi*** y ***Nossair Ghazouani****
-
 ![](https://gaminguardian.com/wp-content/uploads/2018/05/Ash-Pikachu-FI.jpg)
+
+*Creada por ***David Ayachi*** y ***Nossair Ghazouani****

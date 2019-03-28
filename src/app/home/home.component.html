@@ -1,0 +1,67 @@
+<!-- MENÚ -->
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img src="../../assets/images/logo.png" width="40" height="40"> </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><fa-icon [icon]="faHome"></fa-icon> Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><fa-icon [icon]="faStar" class="text-white"></fa-icon> Normal</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><fa-icon [icon]="faFire" class="text-danger"></fa-icon> Fire</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><fa-icon [icon]="faTint" style="color: aqua;"></fa-icon> Water</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"><fa-icon [icon]="faBolt" class="text-warning"></fa-icon> Electric</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Altres tipus
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Grass</a>
+          <a class="dropdown-item" href="#">Ice</a>
+          <a class="dropdown-item" href="#">Fighting</a>
+          <a class="dropdown-item" href="#">Poison</a>
+          <a class="dropdown-item" href="#">Ground</a>
+          <a class="dropdown-item" href="#">Flying</a>
+          <a class="dropdown-item" href="#">Psychic</a>
+          <a class="dropdown-item" href="#">Bug</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Cercar pokemon, tipus, ..." aria-label="Cercar">
+      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Cercar</button>
+    </form>
+  </div>
+</nav>
+
+<section>
+  <app-filtros></app-filtros>
+  <app-pokemon></app-pokemon>
+</section>
+
+
+<!-- PIE DE PAGINA -->
+
+<footer class="bg-dark footer fixed-bottom">
+  <div class="col-12 row">
+    <div class="col-lg-7 col-md-7 col-sm-12 col-12">
+      <fa-icon [icon]="faInfo" class="ml-2"></fa-icon><span class="ml-4">Pokemon App - Examen DAW (M06 - UF4)</span>
+    </div>
+    <div class="col-lg-5 col-md-5 col-sm-12 col-12 text-lg-right">
+      <fa-icon [icon]="faUserFriends" class="ml-2"></fa-icon><span class="ml-4">Nossair Ghazouani i David Ayachi</span>
+    </div>
+  </div>
+
+</footer>

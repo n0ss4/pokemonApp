@@ -1,0 +1,12 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-height: 60px;
+  line-height: 60px;
+  color: white;
+}
+
+body{
+  padding-bottom: 60px;
+}

@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonComponent implements OnInit {
 
+  // Numero de pokemon
+  items:number[] = new Array(30);
+
   constructor() { }
 
   ngOnInit() {

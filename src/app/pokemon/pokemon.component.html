@@ -1,3 +1,5 @@
+
+
 <div class="col-12 row m-0 p-0 mt-1" align="center" style="height: 71.2vh; overflow: auto;">
   
   <div class="col-lg-4 col-xl-3 col-md-4 col-12 mt-2 col-sm-8 offset-sm-2 offset-0 offset-lg-0 offset-md-0" align="center" *ngFor="let item of arrayPokemon | filter:filterPost">
@@ -56,7 +58,7 @@
       </div>
     </div>
     <button type="button" class="btn btn-warning">Editar</button>
-    <button type="button" class="btn btn-danger">Eliminar</button>
+    <button type="button" (click)="deletePokemon(item.id)" class="btn btn-danger">Eliminar</button>
 
 
    

@@ -39,7 +39,11 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) { }
   verEstadistica: boolean;
   sortName: string;
+  arraytot: Pokemon[];
+
   ngOnInit() {
+    this.arraytot= this.arrayPokemon;
+
     this.getPokemonAll();
   }
    show(event):void{
@@ -67,10 +71,16 @@ export class HomeComponent implements OnInit {
       .subscribe((data) => this.procesar(data) );
   }
   getPokemonType(type: string) {
-    this.arrayPokemon.length = 0;
-    this.http.get<Pokemon[]>(this.url, {observe: 'response'})
-      .subscribe((data) => this.getTypes(data,type) );
+    console.log(this.arraytot.length)
+    this.arrayPokemon = this.arraytot;
+    alert("Be")
+    this.arrayPokemon = this.arrayPokemon.filter(word => JSON.stringify(word.types).indexOf(type) !== -1);
+    console.log(this.arrayPokemon)
+    //this.http.get<Pokemon[]>(this.url, {observe: 'response'})
+      //.subscribe((data) => this.getTypes(data,type) );
   }
+
+ 
   procesar(data: any ) {
     data.body.forEach(
       afegim => this.arrayPokemon.push({
@@ -88,31 +98,6 @@ export class HomeComponent implements OnInit {
   }));
   }
   
-
-
-  getTypes(data: any, type: string) {
-    var self = this;
-    data.body.forEach(
-      function(items) {
-        if (items['types'].includes(type)) {
-          self.arrayPokemon.push({
-            id: items['id'],
-            name: items['name'],
-            height: items['height'],
-            weight: items['weight'],
-            color: items['color'],
-            sprite: items['sprite'],
-            hp: items['hp'],
-            attack: items['attack'],
-            defense: items['defense'],
-            speed: items['speed'],
-            types: items['types'],
-          });
-        }
-      });
-     
-
-  }
   Nom(){
 
     this.arrayPokemon.sort(function (a, b) {

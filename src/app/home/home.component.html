@@ -9,46 +9,46 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#"><fa-icon [icon]="faHome"></fa-icon> Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#" (click)="getPokemonAll()"><fa-icon [icon]="faHome"></fa-icon> Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><fa-icon [icon]="faStar" class="text-white"></fa-icon> Normal</a>
+        <a class="nav-link" (click)="getPokemonType('Normal')" href="#"><fa-icon [icon]="faStar" class="text-white"></fa-icon> Normal</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><fa-icon [icon]="faFire" class="text-danger"></fa-icon> Fire</a>
+        <a class="nav-link" (click)="getPokemonType('Fire')" href="#"><fa-icon [icon]="faFire" class="text-danger"></fa-icon> Fire</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><fa-icon [icon]="faTint" style="color: aqua;"></fa-icon> Water</a>
+        <a class="nav-link" (click)="getPokemonType('Water')" href="#"><fa-icon [icon]="faTint" style="color: aqua;"></fa-icon> Water</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><fa-icon [icon]="faBolt" class="text-warning"></fa-icon> Electric</a>
+        <a class="nav-link" (click)="getPokemonType('Electric')" href="#"><fa-icon [icon]="faBolt" class="text-warning"></fa-icon> Electric</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Altres tipus
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Grass</a>
-          <a class="dropdown-item" href="#">Ice</a>
-          <a class="dropdown-item" href="#">Fighting</a>
-          <a class="dropdown-item" href="#">Poison</a>
-          <a class="dropdown-item" href="#">Ground</a>
-          <a class="dropdown-item" href="#">Flying</a>
-          <a class="dropdown-item" href="#">Psychic</a>
-          <a class="dropdown-item" href="#">Bug</a>
+          <a class="dropdown-item" href="#" (click)="getPokemonType('Grass')">Grass</a>
+          <a class="dropdown-item" href="#" (click)="getPokemonType('Ice')">Ice</a>
+          <a class="dropdown-item" href="#" (click)="getPokemonType('Fighting')">Fighting</a>
+          <a class="dropdown-item" href="#" (click)="getPokemonType('Poison')">Poison</a>
+          <a class="dropdown-item" href="#" (click)="getPokemonType('Ground')">Ground</a>
+          <a class="dropdown-item" href="#" (click)="getPokemonType('Flying')">Flying</a>
+          <a class="dropdown-item" href="#" (click)="getPokemonType('Psychic')">Psychic</a>
+          <a class="dropdown-item" href="#" (click)="getPokemonType('Bug')">Bug</a>
         </div>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Cercar pokemon, tipus, ..." aria-label="Cercar">
+      <input class="form-control mr-sm-2" type="search" name="filterPost" [(ngModel)]="filterPost" placeholder="Cercar pokemon, tipus, ..." aria-label="Cercar">
       <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Cercar</button>
     </form>
   </div>
 </nav>
 
 <section>
-  <app-filtros></app-filtros>
-  <app-pokemon></app-pokemon>
+  <app-filtros (verEstadistica)="show($event)" (result)="showSort($event)"></app-filtros>
+  <app-pokemon [arrayPokemon]='arrayPokemon' [verEstadistica]='verEstadistica' [filterPost]='filterPost'></app-pokemon>
 </section>
 
 

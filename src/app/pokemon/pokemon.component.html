@@ -5,34 +5,42 @@
   <div class="col-lg-4 col-xl-3 col-md-4 col-12 mt-2 col-sm-8 offset-sm-2 offset-0 offset-lg-0 offset-md-0" align="center" *ngFor="let item of arrayPokemon | filter:filterPost">
     <div class="col-12 row p-0 m-1" style="border: 1px solid #337ab7; border-radius: 5px;">
       <div class="col-12 text-white text-left pl-3 m-0" style="background-color: #337ab7;">
+        <!-- NOMBRE del POKEMON -->
         <h5 class="text-uppercase">{{item.name}}</h5>
       </div>
-
-      <div class="col-xl-6 col-12 p-0 m-0">
-        <img src={{item.sprite}}>
+      
+      <div class="col-xl-6 col-12 p-0 m-0 align-self-center">
+        <!--  IMAGEN -->
+        <img src="{{ item.sprite }}">
+        <!-- BARRA de PROGRESO -->
         <div class="progress w-75 mb-3" style="height: 6px;">
           <div class="progress-bar w-100 h-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
       </div>
 
+
       <div class="col-12 col-xl-6 row p-0 m-0 mt-lg-2">
-        <div class="col-6 p-0 text-center">
+        <!-- ETIQUETA 1 -->
+        <div class="col-6 p-0 text-xl-left text-center">
          <span class="text-uppercase rounded p-1" style="background-color: aqua;">{{item.types[0]}}</span>
         </div>
-        <div *ngIf="item.types?.length > 1" class="col-6 p-0 text-center">
+        <!-- ETIQUETA 2 -->
+        <div class="col-6 p-0">
           <span class="text-uppercase rounded p-1" style="background-color: aqua;">{{item.types[1]}}</span>
         </div>
         <div class="col-12 p-0 m-0 text-xl-left mt-2">
-          <h1>{{dos}}</h1>
+          <!-- HEIGHT -->
           <p><b>Height:</b> {{item.height}}</p>
-          <p><b>Weight:</b>{{item.weight}}</p>
+          <!-- WEIGHT -->
+          <p><b>Weight:</b> {{item.weight}}</p>
+          <!-- COLOR -->
           <p><b>Color:</b> {{item.color}}</p>
         </div>
       </div>
       <div *ngIf="verEstadistica" class="col-12 p-0 m-0 mt-lg-2">
         <div class="col-12 row p-0 m-0">
             <div class="col-xl-2 col-12">HP</div>
-            <div class="progress col-xl-8 col-12 offset-xl-2">
+            <div class="progress col-xl-8 col-12 offset-xl-2 p-0 m-0">
               <div class="progress-bar progress-bar-striped" role="progressbar" 
               [ngStyle]="{'width.%': item.hp}"
               aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">{{item.hp}}%</div>
@@ -40,15 +48,20 @@
         </div>
         <div class="col-12 row p-0 m-0">
           <div class="col-xl-2 col-12">Attack</div>
-          <div class="progress col-xl-8 col-12 offset-xl-2">
+          <div class="progress col-xl-8 col-12 offset-xl-2 p-0 m-0">
             <div class="progress-bar progress-bar-striped" role="progressbar" [ngStyle]="{'width.%': item.attack}" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">{{item.attack}}%</div>
           </div>
+      </div>
+      <div class="col-12 row p-0 m-0">
+        <div class="col-xl-2 col-12">Defense</div>
+        <div class="progress col-xl-8 col-12 offset-xl-2 p-0 m-0">
+          <div class="progress-bar progress-bar-striped" role="progressbar" [ngStyle]="{'width.%': item.defense}" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">{{item.defense}}%</div>
         </div>
         
         <div class="col-12 row p-0 m-0">
-          <div class="col-xl-2 col-12">Defense</div>
-          <div class="progress col-xl-8 col-12 offset-xl-2">
-            <div class="progress-bar progress-bar-striped" role="progressbar" [ngStyle]="{'width.%': item.defense}" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">{{item.defense}}%</div>
+          <div class="col-xl-2 col-12">Speed</div>
+          <div class="progress col-xl-8 col-12 offset-xl-2 p-0 m-0">
+            <div class="progress-bar progress-bar-striped" role="progressbar" [ngStyle]="{'width.%': item.speed}" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">{{item.speed}}%</div>
           </div>
           <div class="col-12 row p-0 m-0">
             <div class="col-xl-2 col-12">Speed</div>
@@ -57,9 +70,10 @@
             </div>
         </div>
       </div>
-    <button type="button" class="btn btn-warning">Editar</button>
+    </div>
+    <button type="button" class="btn btn-warning" (click)="show(item.id)">Editar</button>
     <button type="button" (click)="deletePokemon(item.id)" class="btn btn-danger">Eliminar</button>
-
+    
 
    
       </div>
@@ -67,3 +81,7 @@
     </div>
   </div>
 </div>
+
+<app-editar></app-editar>
+
+

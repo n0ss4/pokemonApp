@@ -43,47 +43,59 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.arraytot= this.arrayPokemon;
-
     this.getPokemonAll();
-  }
-   show(event):void{
+  };
+  
+  show(event):void{
     this.verEstadistica = event.nombre;
-  }
+  };
+  
   showSort(event):void{
     this.sortName = event.nombre;
-    console.log("El event "+event.nombre)
     if(this.sortName === "Nom"){
-      console.log("1")
-      this.Nom();
+      this.nom();
     }else if(this.sortName === "Height"){
-      console.log("2")
-      this.Height();
+      this.height();
     }else if(this.sortName === "Attack"){
-      console.log("3")
-      this.Attack();
-    }
-  }
-
+      this.attack();
+    };
+  };
+  
+  showReverse(event):void{
+    console.log(event.nombre, this.sortName);
+    if(event.nombre && this.sortName=== "Nom"){
+      this.nomReverse();
+    }else if (event.nombre===false && this.sortName=== "Nom"){
+      this.nom();
+    }else if (event.nombre && this.sortName=== "Height"){
+      this.heightReverse();
+    }else if (event.nombre===false && this.sortName=== "Height"){
+      this.height();
+    }else if (event.nombre && this.sortName=== "Attack"){
+      this.attackReverse();
+    }else if (event.nombre==false && this.sortName=== "Attack"){
+      this.attack();
+    }else if (event.nombre && this.sortName=== "Tria una opció:"){
+      this.nomReverse();
+    }else{
+      this.nom();
+    };
+  };
+  
   getPokemonAll() {
     this.arrayPokemon.length = 0;
-
     this.http.get<Pokemon[]>(this.url, {observe: 'response'})
-      .subscribe((data) => this.procesar(data) );
-  }
+      .subscribe((data) => this.procesar(data));
+  };
+  
   getPokemonType(type: string) {
-    console.log(this.arraytot.length)
     this.arrayPokemon = this.arraytot;
-    alert("Be")
     this.arrayPokemon = this.arrayPokemon.filter(word => JSON.stringify(word.types).indexOf(type) !== -1);
-    console.log(this.arrayPokemon)
-    //this.http.get<Pokemon[]>(this.url, {observe: 'response'})
-      //.subscribe((data) => this.getTypes(data,type) );
-  }
-
- 
+  };
+  
   procesar(data: any ) {
     data.body.forEach(
-      afegim => this.arrayPokemon.push({
+    afegim => this.arrayPokemon.push({
     id: afegim['id'],
     name: afegim['name'],
     height: afegim['height'],
@@ -96,10 +108,9 @@ export class HomeComponent implements OnInit {
     speed: afegim['speed'],
     types: afegim['types'],
   }));
-  }
+  };
   
-  Nom(){
-
+  nom(){
     this.arrayPokemon.sort(function (a, b) {
       if (a.name > b.name) {
         return 1;
@@ -107,12 +118,11 @@ export class HomeComponent implements OnInit {
       if (a.name < b.name) {
         return -1;
       }
-      // a must be equal to b
       return 0;
     });
-  }
-  Height(){
-
+  };
+  
+  height(){
     this.arrayPokemon.sort(function (a, b) {
       if (a.height > b.height) {
         return 1;
@@ -120,12 +130,11 @@ export class HomeComponent implements OnInit {
       if (a.height < b.height) {
         return -1;
       }
-      // a must be equal to b
       return 0;
     });
-  }
-  Attack(){
-
+  };
+  
+  attack(){
     this.arrayPokemon.sort(function (a, b) {
       if (a.attack > b.attack) {
         return 1;
@@ -133,9 +142,43 @@ export class HomeComponent implements OnInit {
       if (a.attack < b.attack) {
         return -1;
       }
-      // a must be equal to b
       return 0;
     });
-  }
-
+  };
+  
+  nomReverse(){
+    this.arrayPokemon.sort(function (a, b) {
+      if (a.name < b.name) {
+        return 1;
+      }
+      if (a.name > b.name) {
+        return -1;
+      }
+      return 0;
+    });
+  };
+  
+  heightReverse(){
+    this.arrayPokemon.sort(function (a, b) {
+      if (a.height < b.height) {
+        return 1;
+      }
+      if (a.height > b.height) {
+        return -1;
+      }
+      return 0;
+    });
+  };
+  
+  attackReverse(){
+    this.arrayPokemon.sort(function (a, b) {
+      if (a.attack < b.attack) {
+        return 1;
+      }
+      if (a.attack > b.attack) {
+        return -1;
+      }
+      return 0;
+    });
+  };
 }

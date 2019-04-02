@@ -47,7 +47,7 @@
 </nav>
 
 <section>
-  <app-filtros (verEstadistica)="show($event)" (result)="showSort($event)"></app-filtros>
+  <app-filtros (verEstadistica)="show($event)" (result)="showSort($event)" (reverse)="showReverse($event)"></app-filtros>
   <app-pokemon [arrayPokemon]='arrayPokemon' [verEstadistica]='verEstadistica' [filterPost]='filterPost'></app-pokemon>
 </section>
 

@@ -3,14 +3,14 @@
 <div class="row border-bottom pb-2 m-0 pl-2 pl-lg-0" style="background-color: lightgrey; padding-top: 75px;">
   <div class="col-lg-4 col-12 row">
     <label for="select" class="col-form-label col-lg-4 col-12">Ordenar per:</label>
-    <select [(ngModel)]="selectedOption" (click)="klk()" class="form-control col-lg-7 col-12" id="select">
-      <option  > Tria una opció:</option>
-      <option >Nom</option>
+    <select [(ngModel)]="selectedOption" (click)="triar(id)" class="form-control col-lg-7 col-12" id="select">
+      <option [selected]=true> Tria una opció:</option>
+      <option id="nom">Nom</option>
       <option>Height</option>
       <option>Attack</option>
     </select>
     <div class="col-lg-1 d-lg-flex align-self-lg-center col-12 p-0 p-lg-2" style="transform: rotate(90deg);">
-      <fa-icon [icon]="faExchangeAlt" (click)="sendSort()"></fa-icon>
+      <fa-icon [icon]="faExchangeAlt" (click)="sendReverse()"></fa-icon>
     </div>
 
   </div>

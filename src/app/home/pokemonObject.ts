@@ -22,8 +22,8 @@ export class Pokemon {
       this.defense = defense;
       this.speed = speed;
       this.types = types;
-    }
-  }
+    };
+  };
   export const POKEMON: Pokemon[] = [];
   
   

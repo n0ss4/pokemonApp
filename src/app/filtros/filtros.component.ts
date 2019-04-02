@@ -17,11 +17,11 @@ export class FiltrosComponent implements OnInit {
   @Output() verEstadistica= new EventEmitter();
   @Output() result= new EventEmitter();
 
-  selectedOption: string;
+  selectedOption = "default";
   
 
   constructor() {
-this.nombre = true;
+    this.nombre = true;
    }
   lanzar(event){
     if(this.nombre ){

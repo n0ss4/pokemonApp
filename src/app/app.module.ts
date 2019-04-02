@@ -13,6 +13,7 @@ import { EliminarComponent } from './pokemon/eliminar/eliminar.component';
 import { FilterPipe } from './filter/filter.pipe';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { SortPipe } from './sort/sort.pipe';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { SortPipe } from './sort/sort.pipe';
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule 
+    FormsModule,
+    NgbModule
 
   ],
   providers: [],

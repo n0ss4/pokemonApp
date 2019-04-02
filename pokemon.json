@@ -1,33 +1,6 @@
 {
   "pokemon": [
     {
-      "id": 5,
-      "name": "Charmeleon",
-      "height": 1.1,
-      "weight": 19,
-      "color": "Red",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
-      "hp": 58,
-      "attack": 64,
-      "defense": 58,
-      "speed": 80,
-      "types": [
-        "Fire"
-      ],
-      "genderRatio": {
-        "M": 0.875,
-        "F": 0.125
-      },
-      "abilities": {
-        "0": "Blaze",
-        "H": "Solar Power"
-      },
-      "eggGroups": [
-        "Monster",
-        "Dragon"
-      ]
-    },
-    {
       "id": 6,
       "name": "Charizard-Mega-Y",
       "height": 1.7,
@@ -52,60 +25,6 @@
       "eggGroups": [
         "Monster",
         "Dragon"
-      ]
-    },
-    {
-      "id": 7,
-      "name": "Squirtle",
-      "height": 0.5,
-      "weight": 9,
-      "color": "Blue",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-      "hp": 44,
-      "attack": 48,
-      "defense": 65,
-      "speed": 43,
-      "types": [
-        "Water"
-      ],
-      "genderRatio": {
-        "M": 0.875,
-        "F": 0.125
-      },
-      "abilities": {
-        "0": "Torrent",
-        "H": "Rain Dish"
-      },
-      "eggGroups": [
-        "Monster",
-        "Water 1"
-      ]
-    },
-    {
-      "id": 8,
-      "name": "Wartortle",
-      "height": 1,
-      "weight": 22.5,
-      "color": "Blue",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
-      "hp": 59,
-      "attack": 63,
-      "defense": 80,
-      "speed": 58,
-      "types": [
-        "Water"
-      ],
-      "genderRatio": {
-        "M": 0.875,
-        "F": 0.125
-      },
-      "abilities": {
-        "0": "Torrent",
-        "H": "Rain Dish"
-      },
-      "eggGroups": [
-        "Monster",
-        "Water 1"
       ]
     },
     {

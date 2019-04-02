@@ -70,12 +70,13 @@ export class HomeComponent implements OnInit {
     this.http.get<Pokemon[]>(this.url, {observe: 'response'})
       .subscribe((data) => this.procesar(data) );
   }
+
   getPokemonType(type: string) {
     console.log(this.arraytot.length)
     this.arrayPokemon = this.arraytot;
-    alert("Be")
+    alert("Be");
     this.arrayPokemon = this.arrayPokemon.filter(word => JSON.stringify(word.types).indexOf(type) !== -1);
-    console.log(this.arrayPokemon)
+    console.log(this.arrayPokemon);
     //this.http.get<Pokemon[]>(this.url, {observe: 'response'})
       //.subscribe((data) => this.getTypes(data,type) );
   }

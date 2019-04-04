@@ -29,33 +29,6 @@
     },
     {
       "id": 9,
-      "name": "Blastoise",
-      "height": 1.6,
-      "weight": 85.5,
-      "color": "Blue",
-      "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
-      "hp": 79,
-      "attack": 83,
-      "defense": 100,
-      "speed": 78,
-      "types": [
-        "Water"
-      ],
-      "genderRatio": {
-        "M": 0.875,
-        "F": 0.125
-      },
-      "abilities": {
-        "0": "Torrent",
-        "H": "Rain Dish"
-      },
-      "eggGroups": [
-        "Monster",
-        "Water 1"
-      ]
-    },
-    {
-      "id": 9,
       "name": "Blastoise-Mega",
       "height": 1.6,
       "weight": 101.1,
